@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ihmsh43qn37u"]
+
+[ext_resource type="Script" uid="uid://7eh6fjfi8ufg" path="res://actores/caja/caja.gd" id="1_34aff"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://dpeqoqtk54khs" path="res://actores/caja/DATA_caja.tres" id="2_mmlgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27gsx"]
+size = Vector2(24, 1178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tnn8"]
+size = Vector2(792, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck66d"]
+size = Vector2(792.25, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0go5"]
+size = Vector2(17, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d41b"]
+size = Vector2(16.625, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bpsp"]
+size = Vector2(20, 532)
+
+[node name="Caja" type="AnimatableBody2D" unique_id=1812807372]
+show_behind_parent = true
+z_index = 1
+script = ExtResource("1_34aff")
+
+[node name="Left" type="CollisionShape2D" parent="." unique_id=415080757]
+position = Vector2(-396, 0)
+shape = SubResource("RectangleShape2D_27gsx")
+
+[node name="Bottom" type="CollisionShape2D" parent="." unique_id=265584971]
+position = Vector2(12, 580)
+shape = SubResource("RectangleShape2D_7tnn8")
+
+[node name="Top" type="CollisionShape2D" parent="." unique_id=1404481380]
+position = Vector2(11.875, -580)
+shape = SubResource("RectangleShape2D_ck66d")
+
+[node name="Right1" type="CollisionShape2D" parent="." unique_id=1702674364]
+position = Vector2(399.5, -418.5)
+shape = SubResource("RectangleShape2D_b0go5")
+
+[node name="Right2" type="CollisionShape2D" parent="." unique_id=1202537192]
+position = Vector2(399.6875, 418.5)
+shape = SubResource("RectangleShape2D_0d41b")
+
+[node name="SlotArea" type="Area2D" parent="." unique_id=864209099]
+show_behind_parent = true
+
+[node name="SlotCollisionArea" type="CollisionShape2D" parent="SlotArea" unique_id=1641617449]
+position = Vector2(398, 0)
+shape = SubResource("RectangleShape2D_6bpsp")
+debug_color = Color(0.81364524, 0.40171012, 0.21565348, 0.41960785)
+
+[node name="Caja" type="SpineSprite" parent="." unique_id=1061840790]
+skeleton_data_res = ExtResource("2_mmlgp")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0

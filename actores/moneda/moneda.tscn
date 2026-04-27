@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d003t6iov07sw"]
+
+[ext_resource type="Script" uid="uid://cqktbsal4yu34" path="res://actores/moneda/moneda.gd" id="1_rnkv7"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://b2vcdcu2hw67e" path="res://actores/moneda/DATA_moneda.tres" id="2_18dbo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkv0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27gsx"]
+
+[node name="Moneda" type="CharacterBody2D" unique_id=158953859 node_paths=PackedStringArray("coin_area", "caja_body")]
+script = ExtResource("1_rnkv7")
+coin_area = NodePath("MonedaArea")
+caja_body = NodePath("")
+
+[node name="Moneda" type="SpineSprite" parent="." unique_id=733021589]
+skeleton_data_res = ExtResource("2_18dbo")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968169701]
+scale = Vector2(16.979315, 16.979315)
+shape = SubResource("CircleShape2D_wkv0y")
+
+[node name="MonedaArea" type="Area2D" parent="." unique_id=703546845]
+
+[node name="CollisionMoneda" type="CollisionShape2D" parent="MonedaArea" unique_id=1482245777]
+scale = Vector2(17.093885, 17.093885)
+shape = SubResource("CircleShape2D_27gsx")

@@ -1,91 +1,20 @@
 [gd_scene format=3 uid="uid://betwcq0afkb5x"]
 
-[ext_resource type="SpineSkeletonDataResource" uid="uid://dpeqoqtk54khs" path="res://spine/moneda-caja/DATA_caja.tres" id="1_27gsx"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://b2vcdcu2hw67e" path="res://spine/moneda-caja/DATA_moneda.tres" id="2_7tnn8"]
-[ext_resource type="Script" uid="uid://cqktbsal4yu34" path="res://moneda.gd" id="3_7tnn8"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wkv0y"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_27gsx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_27gsx"]
-size = Vector2(24, 1178.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tnn8"]
-size = Vector2(792.5, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck66d"]
-size = Vector2(792.5, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0go5"]
-size = Vector2(17.25, 305)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d41b"]
-size = Vector2(17.25, 305)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bpsp"]
-size = Vector2(20, 531)
+[ext_resource type="PackedScene" uid="uid://ihmsh43qn37u" path="res://actores/caja/caja.tscn" id="1_27gsx"]
+[ext_resource type="PackedScene" uid="uid://d003t6iov07sw" path="res://actores/moneda/moneda.tscn" id="2_7tnn8"]
 
 [node name="MyScene" type="Node2D" unique_id=1603819362]
 
-[node name="MonedaRoot" type="CharacterBody2D" parent="." unique_id=952088496]
-position = Vector2(920, 300)
-scale = Vector2(1.8706658, 0.33254927)
-script = ExtResource("3_7tnn8")
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1543173745]
+zoom = Vector2(0.333, 0.333)
 
-[node name="Moneda" type="SpineSprite" parent="MonedaRoot" unique_id=46470264]
-skeleton_data_res = ExtResource("2_7tnn8")
-preview_skin = "Default"
-preview_animation = "-- Empty --"
-preview_frame = false
-preview_time = 0.0
+[node name="Caja" parent="." unique_id=1812807372 instance=ExtResource("1_27gsx")]
+position = Vector2(-500, 0)
+sensitivity = 0.697
+bounciness = 0.326
+max_travel = 1000.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MonedaRoot" unique_id=178546274]
-scale = Vector2(16.979315, 16.979315)
-shape = SubResource("CircleShape2D_wkv0y")
-
-[node name="Area2D" type="Area2D" parent="MonedaRoot" unique_id=1657535278]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MonedaRoot/Area2D" unique_id=700795382]
-scale = Vector2(17.093885, 17.093885)
-shape = SubResource("CircleShape2D_27gsx")
-
-[node name="SpineSprite" type="SpineSprite" parent="." unique_id=1503140875]
-skeleton_data_res = ExtResource("1_27gsx")
-preview_skin = "Default"
-preview_animation = "-- Empty --"
-preview_frame = false
-preview_time = 0.0
-position = Vector2(511, 300)
-scale = Vector2(0.333, 0.333)
-
-[node name="CajaBody" type="StaticBody2D" parent="SpineSprite" unique_id=976949495]
-show_behind_parent = true
-
-[node name="Left" type="CollisionShape2D" parent="SpineSprite/CajaBody" unique_id=1251810539]
-position = Vector2(-396, 0.25)
-shape = SubResource("RectangleShape2D_27gsx")
-
-[node name="Bottom" type="CollisionShape2D" parent="SpineSprite/CajaBody" unique_id=19004270]
-position = Vector2(12.25, 580)
-shape = SubResource("RectangleShape2D_7tnn8")
-
-[node name="Top" type="CollisionShape2D" parent="SpineSprite/CajaBody" unique_id=1342384438]
-position = Vector2(12, -580)
-shape = SubResource("RectangleShape2D_ck66d")
-
-[node name="Right1" type="CollisionShape2D" parent="SpineSprite/CajaBody" unique_id=1383680092]
-position = Vector2(399.625, -418.5)
-shape = SubResource("RectangleShape2D_b0go5")
-
-[node name="Right2" type="CollisionShape2D" parent="SpineSprite/CajaBody" unique_id=1121729311]
-position = Vector2(400, 419)
-shape = SubResource("RectangleShape2D_0d41b")
-
-[node name="Area2D" type="Area2D" parent="SpineSprite" unique_id=156694154]
-show_behind_parent = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpineSprite/Area2D" unique_id=618171989]
-position = Vector2(398, -0.5)
-shape = SubResource("RectangleShape2D_6bpsp")
-debug_color = Color(0.81364524, 0.40171012, 0.21565348, 0.41960785)
+[node name="Moneda" parent="." unique_id=158953859 node_paths=PackedStringArray("caja_body") instance=ExtResource("2_7tnn8")]
+position = Vector2(325, 0)
+scale = Vector2(5, 1)
+caja_body = NodePath("../Caja")
