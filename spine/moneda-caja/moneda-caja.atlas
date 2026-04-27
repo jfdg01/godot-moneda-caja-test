@@ -1,0 +1,14 @@
+moneda-caja.png
+size:1567,820
+filter:Linear,Linear
+pma:true
+caja
+bounds:2,2,816,1178
+offsets:1,1,818,1180
+rotate:90
+moneda
+bounds:1182,480,338,338
+offsets:1,1,340,340
+slot
+bounds:1522,286,43,532
+offsets:1,1,45,534

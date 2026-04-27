@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://dpdj5qup0noi7"
+path="res://.godot/imported/moneda-caja.atlas-0f50455af84e3f80475777d707995916.spatlas"
+
+[deps]
+
+source_file="res://spine/moneda-caja/moneda-caja.atlas"
+dest_files=["res://.godot/imported/moneda-caja.atlas-0f50455af84e3f80475777d707995916.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

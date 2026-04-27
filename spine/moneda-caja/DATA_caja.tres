@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" format=3 uid="uid://dpeqoqtk54khs"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://dpdj5qup0noi7" path="res://spine/moneda-caja/moneda-caja.atlas" id="1_0iwgy"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://6uu2eu8u5jbw" path="res://spine/moneda-caja/caja.skel" id="2_jb6at"]
+
+[resource]
+atlas_res = ExtResource("1_0iwgy")
+skeleton_file_res = ExtResource("2_jb6at")

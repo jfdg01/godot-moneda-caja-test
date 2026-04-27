@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://btxj3p1tuoknv"
+path="res://.godot/imported/moneda.skel-bdf1dc6eeb821403ee86c9de5ca6e50a.spskel"
+
+[deps]
+
+source_file="res://spine/moneda-caja/moneda.skel"
+dest_files=["res://.godot/imported/moneda.skel-bdf1dc6eeb821403ee86c9de5ca6e50a.spskel"]
+
+[params]
+
