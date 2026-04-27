@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://betwcq0afkb5x"]
+
+[ext_resource type="PackedScene" uid="uid://ihmsh43qn37u" path="res://actores/caja/caja.tscn" id="1_8k2ju"]
+[ext_resource type="PackedScene" uid="uid://d003t6iov07sw" path="res://actores/moneda/moneda.tscn" id="2_jt3x7"]
+
+[node name="CoinCajaScene" type="Node2D" unique_id=1603819362]
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1543173745]
+zoom = Vector2(0.333, 0.333)
+
+[node name="Caja" parent="." unique_id=1812807372 instance=ExtResource("1_8k2ju")]
+position = Vector2(-500, 0)
+sensitivity = 0.697
+bounciness = 0.326
+max_travel = 1000.0
+
+[node name="Moneda" parent="." unique_id=158953859 node_paths=PackedStringArray("caja_body") instance=ExtResource("2_jt3x7")]
+position = Vector2(325, 0)
+scale = Vector2(5, 1)
+caja_body = NodePath("../Caja")
