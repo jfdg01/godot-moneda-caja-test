@@ -89,7 +89,7 @@ func _build_ui(vp: Vector2) -> void:
 	vbox.add_child(HSeparator.new())
 
 	var hint := Label.new()
-	hint.text = "Click sim → move target\nSpace / button → impulse"
+	hint.text = "Click sim → move target\nSpace / button → impulse\n\nmass only affects impulse\nresponse, not oscillation.\nHigher mass = less kick."
 	hint.add_theme_font_size_override("font_size", 12)
 	hint.modulate = Color(0.75, 0.75, 0.75)
 	vbox.add_child(hint)
@@ -217,8 +217,9 @@ func _on_sim_draw() -> void:
 	_sim.draw_arc(_target_pos, TARGET_R, 0.0, TAU, 32, Color(1, 1, 1, 0.45), 2.0)
 	_sim.draw_arc(_target_pos, 3.0,      0.0, TAU, 16, Color(1, 1, 1, 0.7),  2.0)
 
-	_sim.draw_circle(spring.position, BALL_R, Color(0.25, 0.85, 1.0, 1.0))
-	_sim.draw_arc(spring.position, BALL_R, 0.0, TAU, 32, Color(1, 1, 1, 0.6), 1.5)
+	var ball_r := BALL_R * sqrt(spring.mass)
+	_sim.draw_circle(spring.position, ball_r, Color(0.25, 0.85, 1.0, 1.0))
+	_sim.draw_arc(spring.position, ball_r, 0.0, TAU, 32, Color(1, 1, 1, 0.6), 1.5)
 
 # ── input ──────────────────────────────────────────────────────────────────
 
@@ -239,7 +240,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # ── callbacks ──────────────────────────────────────────────────────────────
 
 func _apply_impulse() -> void:
-	spring.push(Vector2(0.0, 120.0))
+	spring.push(Vector2(0.0, 300.0))
 
 func _reset() -> void:
 	var vp := get_viewport_rect().size
